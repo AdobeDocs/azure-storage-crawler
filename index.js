@@ -25,7 +25,7 @@ async function main() {
 
     let data ='';
     for await (const blob of containerService.listBlobsFlat()){
-        if(blob.name.endsWith('.html')) {
+        if(blob.name.endsWith('.html') || blob.name.endsWith('.htm')) {
             console.log(blob.name);
             data += blob.name + '\n';
         }
